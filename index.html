@@ -9,114 +9,68 @@
         
     </body>
     <script>
-        // var i = 1;
-        // while (i <= 10){
-        //     console.log(i);
-        //     i++;
-        // }
 
-        // for (var i=1; i<=10; i++) {
-        //     if (i==6) {
-        //         break;
-        //     }
-        //     console.log(i);
-            
-        // }
-        // for (var i=1; i<=10; i++){
-        //     if (i==8){
-        //         continue;
-        //     }
-        // //     console.log(i);
-            
-        // }
-            // let data = (2,3,5);
+        function multiple (nums) {
+            if (nums === 'number'){
+                let change = '';
+                for (let i = 1; i <= nums; i++) {
+                    if (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0) {
+                        change.push(i);
+                    }
 
-            // function parameter(arr) {
-            //     let array = [];
-            //     let change, x;
-            //     for (let obj of arr) {
-            //         if ((x % 2) = 0) {
-            //             x = 'yu';
-            //         }
-            //         else if ((x % 3) = 0) {
-            //             x = 'gi';
-            //         }
-            //         else if ((x % 5) = 0) {
-            //             x ='oh';
-            //         }
-            //         else {
-            //             x = x;
-            //         }
+                    if (i % 2 == 0) {
+                        change.push('yu');
 
-            //     }
-
-            //     if ((x % 2) || (x % 3) || (x % 5) = 0)) {
-            //         return 
-            //     }
-
-            // }
-
-                function multiple (nums) {
-                    if (nums === 'number'){
-                        let change = '';
-                        for (let i = 1; i <= nums; i++) {
-                            if (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0) {
-                                change.push(i);
+                        if (i % 5 == 0) {
+                            change(change.length - 1) = 'yu-oh';
                             }
-
-                            if (i % 2 == 0) {
-                                change.push('yu');
-
-                                if (i % 5 == 0) {
-                                    change(change.length - 1) = 'yu-oh';
-                                    }
-                                
-                                if (i % 3 == 0) {
-                                    change(change.length - 1) = 'yu-gi';
-                                    if (i % 5 == 0) {
-                                        change(change.length - 1) = 'yu-gi-oh';
-                                    }
-                                }
-                            }
-
-                            if (i % 2 == 0 && i % 3 == 0) {
-                                change.push('yu-gi');
-                            }              
-
-                            else {
-                                if (i % 3 == 0) {
-                                    change.push('gi');
-                                }
-
-                                if (i % 5 == 0) {
-                                    change(change.length - 1) = 'gi-oh';
-                                }
-                            } 
-
-                        }
-
-                        if (i % 2 == 0 && i % 5 == 0) {
-                        }
-
-                        else {
-                            if (i % 3 == 0 && i % 5 == 0) {
-
-                            }
-
-                            else {
-                                if (i % 5 == 0) {
-                                    change.push('oh');
-                                }
+                        
+                        if (i % 3 == 0) {
+                            change(change.length - 1) = 'yu-gi';
+                            if (i % 5 == 0) {
+                                change(change.length - 1) = 'yu-gi-oh';
                             }
                         }
                     }
 
-                    return change;
+                    if (i % 2 == 0 && i % 3 == 0) {
+                        change.push('yu-gi');
+                    }              
+
+                    else {
+                        if (i % 3 == 0) {
+                            change.push('gi');
+                        }
+
+                        if (i % 5 == 0) {
+                            change(change.length - 1) = 'gi-oh';
+                        }
+                    } 
+
                 }
 
-                multiple(100);
+                if (i % 2 == 0 && i % 5 == 0) {
+                }
 
-                multiple(70);
+                else {
+                    if (i % 3 == 0 && i % 5 == 0) {
+
+                    }
+
+                    else {
+                        if (i % 5 == 0) {
+                            change.push('oh');
+                        }
+                    }
+                }
+            }
+
+            return change;
+        }
+
+        multiple(100);
+
+        multiple(70);
 
     </script>
 </html>
